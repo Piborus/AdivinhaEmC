@@ -1,11 +1,4 @@
-/******************************************************************************
 
-Welcome to GDB Online.
-  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
-  Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -20,7 +13,7 @@ main ()
   
   srand(time(NULL));
   int advinha = rand () % 1000 + 1;
-  printf ("Numero aleatorio foi gerado: %d\n", advinha);
+
   
  int tentativa = 1; 
  while (tentativa <= 10){
@@ -29,12 +22,10 @@ main ()
    
       if (numero > advinha){
         printf ("\nEsse numero é MAIOR, DIMINUA O NUMERO...");
-	    printf ("%d %d %d", tentativa, numero, advinha);
 	    getch();
 	    
       }  else if (numero < advinha) {
         printf ("\nEsse numero é MENOR, AUMENTE O NUMERO ...");
-	    printf ("%d %d %d", tentativa, numero, advinha);
 	    getch();
 	   
       } else if (numero == advinha) {
