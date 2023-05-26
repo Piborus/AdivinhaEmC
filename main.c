@@ -2,55 +2,49 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <conio.h>
 
-int
-main ()
-{
-  int numero;
- 
-  printf("\nBem-vindo ao mentalista, tente descobrir um numero de 1 a 1000.\n");
-  printf("\nVocê terá 10 chances. BOA SORTE.\n");		
-  
-  srand(time(NULL));
-  int advinha = rand () % 1000 + 1;
+int main() {
+    int numero;
 
-  
- int tentativa = 1; 
- while (tentativa <= 10){
-    printf ("\nDigite um numero: ");
-    scanf ("%d", &numero);
-   
-      if (numero > advinha){
-        printf ("\nEsse numero é MAIOR, DIMINUA O NUMERO...");
-	    getch();
-	    
-      }  else if (numero < advinha) {
-        printf ("\nEsse numero é MENOR, AUMENTE O NUMERO ...");
-	    getch();
-	   
-      } else if (numero == advinha) {
-        printf ("\n\n\tVOCÊ ACERTOU O NUMERO :D!!!!!\n\t%d\n\t%d Tentativas\n", advinha, tentativa);
-        printf("Iniciar nova operação(s/n): ");
-        char resposta;
-        scanf(" %c", &resposta);
+    printf("\nBem-vindo ao mentalista! Tente adivinhar um número de 1 a 1000.\n");
 
-    if (resposta == 's' || resposta == 'S') {
-        system("clear"); 
-        main();
-    } else {
-        printf("Encerrando operação.\n");
-    }
-        return 0;
-        
-      } 
-      tentativa++;
- }  
-    if (tentativa == 10) {
-        printf("\n\n\tVOCÊ ERROU O NUMERO :(!!!!!\n\t%d\n\t%d Tentativas\n", advinha, tentativa);
+    srand(time(NULL));
+    int advinha = rand() % 1000 + 1;
+    printf("Número aleatório foi gerado: %d\n", advinha);
+
+    int tentativa = 1;
+    while (tentativa <= 10) {
+        printf("\nDigite um número: ");
+        scanf("%d", &numero);
+
+        if (numero > advinha) {
+            printf("Esse número é MAIOR. Diminua o número...\n");
+        } else if (numero < advinha) {
+            printf("Esse número é MENOR. Aumente o número...\n");
+        } else {
+            printf("\n\n\tVOCÊ ACERTOU O NÚMERO :D!!!!!\n\t%d\n\t%d Tentativas\n", advinha, tentativa);
+
+            printf("Iniciar nova operação (s/n): ");
+            char resposta;
+            scanf(" %c", &resposta);
+
+            if (resposta == 's' || resposta == 'S') {
+                system("clear"); 
+                main();
+            } else {
+                printf("Encerrando operação.\n");
+                break;
+            }
+            return 0;
+        }
+
+        printf("Tentativa: %d de 10\n", tentativa);
+        tentativa++;
     }
 
-    printf("Iniciar nova operação(s/n): ");
+    printf("\n\n\tVOCÊ ERROU O NÚMERO :(!!!!!\n\tNumero correto: %d\n\tNúmero de tentativas: %d\n", advinha, tentativa - 1);
+
+    printf("Iniciar nova operação (s/n): ");
     char resposta;
     scanf(" %c", &resposta);
 
@@ -63,4 +57,3 @@ main ()
 
     return 0;
 }
-
