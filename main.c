@@ -10,6 +10,7 @@ main ()
   int numero;
  
   printf("\nBem-vindo ao mentalista, tente descobrir um numero de 1 a 1000.\n");
+  printf("\nVocê terá 10 chances. BOA SORTE.\n");		
   
   srand(time(NULL));
   int advinha = rand () % 1000 + 1;
@@ -29,13 +30,13 @@ main ()
 	    getch();
 	   
       } else if (numero == advinha) {
-        printf ("\n\n\tVOCC ACERTOU O NUMERO :D!!!!!\n\t%d\n\t%d Tentativas\n", advinha, tentativa);
+        printf ("\n\n\tVOCÊ ACERTOU O NUMERO :D!!!!!\n\t%d\n\t%d Tentativas\n", advinha, tentativa);
         printf("Iniciar nova operação(s/n): ");
         char resposta;
         scanf(" %c", &resposta);
 
     if (resposta == 's' || resposta == 'S') {
-        system("clear"); // Limpar a tela no Linux/Mac (use "cls" no Windows)
+        system("clear"); 
         main();
     } else {
         printf("Encerrando operação.\n");
@@ -54,7 +55,7 @@ main ()
     scanf(" %c", &resposta);
 
     if (resposta == 's' || resposta == 'S') {
-        system("clear"); // Limpar a tela no Linux/Mac (use "cls" no Windows)
+        system("clear"); 
         main();
     } else {
         printf("Encerrando operação.\n");
